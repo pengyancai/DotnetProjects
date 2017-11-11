@@ -91,7 +91,24 @@ namespace WindowsFormsApplication1
             //                 }
             //             }
             Font myFont = new Font(pfc.Families[0], 20f);
-            this.dSkinLabel1.Font = myFont;
+            //this.dSkinLabel1.Font = myFont;
+        }
+
+        public void panel1_Paint(object sender, PaintEventArgs e)
+        {
+                byte[] bytes = LoadCustomFont.Properties.Resources.汉仪刚艺体_35W;
+                System.Drawing.Text.PrivateFontCollection pfc = new System.Drawing.Text.PrivateFontCollection();
+                IntPtr MeAdd = System.Runtime.InteropServices.Marshal.AllocHGlobal(bytes.Length);
+                System.Runtime.InteropServices.Marshal.Copy(bytes, 0, MeAdd, bytes.Length);
+                pfc.AddMemoryFont(MeAdd, bytes.Length);
+                Font drawFont = new Font(pfc.Families[0], 20f);
+            
+
+            String drawString = "虚拟现实"; // Create font and brush.
+            //Font drawFont = new Font("Arial", 16);
+            SolidBrush drawBrush = new SolidBrush(Color.Red);// Create point for upper-left corner of drawing.
+            float x = 0.0F; float y = 0.0F;// Draw string to screen.
+            e.Graphics.DrawString(drawString, drawFont, drawBrush, x, y);
         }
 
         public Form1()

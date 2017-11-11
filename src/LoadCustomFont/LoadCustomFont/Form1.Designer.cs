@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dSkinLabel1 = new DSkin.Controls.DSkinLabel();
+            this.dSkinPanel1 = new DSkin.Controls.DSkinPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -77,18 +80,40 @@
             // 
             // dSkinLabel1
             // 
-            this.dSkinLabel1.Location = new System.Drawing.Point(253, 113);
+            this.dSkinLabel1.Location = new System.Drawing.Point(211, 114);
             this.dSkinLabel1.Name = "dSkinLabel1";
             this.dSkinLabel1.Size = new System.Drawing.Size(73, 14);
             this.dSkinLabel1.TabIndex = 4;
-            this.dSkinLabel1.Text = "dSkinLabel1";
+            //this.dSkinLabel1.Text = "dSkinLabel1";
+            //this.dSkinLabel1.IsDrawText = true;
+            this.dSkinLabel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dSkinPanel1
+            // 
+            this.dSkinPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.dSkinPanel1.Location = new System.Drawing.Point(211, 161);
+            this.dSkinPanel1.Name = "dSkinPanel1";
+            this.dSkinPanel1.RightBottom = ((System.Drawing.Image)(resources.GetObject("dSkinPanel1.RightBottom")));
+            this.dSkinPanel1.Size = new System.Drawing.Size(115, 88);
+            this.dSkinPanel1.TabIndex = 5;
+            this.dSkinPanel1.Text = "dSkinPanel1";
+            //this.dSkinPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(210, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(116, 64);
+            this.panel1.TabIndex = 6;
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(339, 273);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dSkinPanel1);
             this.Controls.Add(this.dSkinLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -108,6 +133,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private DSkin.Controls.DSkinLabel dSkinLabel1;
+        private DSkin.Controls.DSkinPanel dSkinPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
