@@ -36,9 +36,19 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DSkin">
+      <HintPath>..\..\..\..\..\DSkin\AuthorizeDSkin20151015005333\【4.0】DSkin20171107202501\DSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DSkin.Design">
+      <HintPath>..\..\..\..\..\DSkin\AuthorizeDSkin20151015005333\【4.0】DSkin20171107202501\DSkin.Design.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>

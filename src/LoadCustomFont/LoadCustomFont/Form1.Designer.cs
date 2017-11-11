@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dSkinLabel1 = new DSkin.Controls.DSkinLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -74,11 +75,21 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "虚拟现实";
             // 
+            // dSkinLabel1
+            // 
+            this.dSkinLabel1.Location = new System.Drawing.Point(253, 113);
+            this.dSkinLabel1.Name = "dSkinLabel1";
+            this.dSkinLabel1.Size = new System.Drawing.Size(73, 14);
+            this.dSkinLabel1.TabIndex = 4;
+            this.dSkinLabel1.Text = "dSkinLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(339, 273);
+            this.Controls.Add(this.dSkinLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -96,6 +107,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private DSkin.Controls.DSkinLabel dSkinLabel1;
     }
 }
 

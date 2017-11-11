@@ -74,6 +74,26 @@ namespace WindowsFormsApplication1
             this.label4.Font = myFont;
         }
 
+        public void setFontFromResourceForDskinLabel()
+        {
+            byte[] bytes = LoadCustomFont.Properties.Resources.汉仪刚艺体_35W;
+
+            System.Drawing.Text.PrivateFontCollection pfc = new System.Drawing.Text.PrivateFontCollection();
+            IntPtr MeAdd = System.Runtime.InteropServices.Marshal.AllocHGlobal(bytes.Length);
+            System.Runtime.InteropServices.Marshal.Copy(bytes, 0, MeAdd, bytes.Length);
+            pfc.AddMemoryFont(MeAdd, bytes.Length);
+
+            //             unsafe //打开"允许不安全代码编译"开关，此句才不报错  
+            //             {
+            //                 fixed (byte* pFontData = bytes)
+            //                 {
+            //                     pfc.AddMemoryFont((System.IntPtr)pFontData, bytes.Length);
+            //                 }
+            //             }
+            Font myFont = new Font(pfc.Families[0], 20f);
+            this.dSkinLabel1.Font = myFont;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -83,6 +103,8 @@ namespace WindowsFormsApplication1
             setFontByStream();
 
             setFontFromResource();
+
+            setFontFromResourceForDskinLabel();
         }
     }
 }
